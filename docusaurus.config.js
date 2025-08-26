@@ -79,12 +79,7 @@ const config = {
             position: 'left',
             label: 'Integrations',
           },
-           {
-            type: 'docSidebar',
-            sidebarId: 'apiSidebar',
-            position: 'left',
-            label: 'API',
-          },
+          { to: '/guides/best-practices', label: 'Guides', position: 'left' },
           {
             href: 'https://github.com/facebook/docusaurus',
             label: 'GitHub',
@@ -138,6 +133,21 @@ const config = {
         darkTheme: prismThemes.dracula,
       },
     }),
+
+
+  plugins: [
+      [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'guides', // Guides section
+        path: 'guides',
+        routeBasePath: 'guides',
+        sidebarPath: require.resolve('./sidebarsGuides.js'),
+      },
+      ]
+  ]
+
+
 };
 
 export default config;
